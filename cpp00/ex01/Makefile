@@ -1,18 +1,15 @@
-SOURCES = megaphone.cpp
+SOURCES = main.cpp Contact.cpp PhoneBook.cpp
 SRC_FILES = $(addprefix $(SRC_DIR),$(SOURCES))
 OBJ_FILES = $(patsubst %.cpp,$(BUILD_DIR)/%.o,$(SOURCES))
 DEP_FILES = $(patsubst %.cpp,$(BUILD_DIR)/%.d,$(SOURCES))
 
-HDR_FLAGS = -I $(INCLUDE)
 SRC_DIR = $(CURDIR)
 BUILD_DIR = $(CURDIR)/build
 
-NAME = megaphone
+NAME = phonebook
 
 CXX = g++
-CXXFLAGS = -Wall -Wextra -g -MMD -std=c++98
-
-INCLUDE = $(CURDIR)/include
+CXXFLAGS = -Wall -Wextra -g -MMD -std=c++98 
 
 all: $(NAME)
 
