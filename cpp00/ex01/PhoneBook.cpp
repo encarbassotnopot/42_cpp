@@ -2,62 +2,67 @@
 
 PhoneBook::PhoneBook()
 {
-	this->_index = 0;
-	this->_size = 0;
+	_index = 0;
+	_size = 0;
+	std::clog << "PhoneBook created" << std::endl;
 }
 
 PhoneBook::~PhoneBook()
 {
+	std::clog << "PhoneBook destroyed" << std::endl;
 }
 
 void PhoneBook::newContact()
 {
-	Contact c;
-	if (c.init())
-		return;
-	this->_contacts[this->_index] = c;
-	this->_index = _index + 1 % 8;
-	if (this->_size < 8)
-		this->_size++;
+	_contacts[_index].init();
+	_index = (_index + 1) % MAX_CONTACTS;
+	if (_size < MAX_CONTACTS)
+		_size++;
 }
 
 void PhoneBook::listContacts()
 {
-	if (this->_size == 0)
+	if (_size == 0)
 	{
 		std::cout << "No contacts found" << std::endl;
 		return;
 	}
 
 	std::cout << "| Index      | First Name | LastName   | Nickname   |" << std::endl;
-	for (size_t i = 0; i < this->_size; i++)
+	for (size_t i = 0; i < _size; i++)
 	{
-		std::cout << "| " << i << "          | " << this->_contacts[i].shortDetails() << std::endl;
+		std::cout << "| " << i << "          | " << _contacts[i].shortDetails() << std::endl;
 	}
 	size_t index;
-	do
+	while (std::cin.good())
 	{
 		std::cout << "Enter an index:" << std::endl;
 		std::cin >> index;
-		if (std::cin.fail() || index >= this->_size)
-			std::cout << "Error: Enter a number between 0 and " << this->_size - 1 << std::endl;
+		if (std::cin.fail() || index > _size)
+		{
+			if (std::cin.eof())
+				return;
+			std::cout << "Invalid index." << std::endl;
+			std::cin.clear();
+			std::cin.ignore(256, '\n');
+		}
 		else
 			break;
-	} while (std::cin.good());
-	if (!std::cin.good())
-		return;
-	std::cout << this->_contacts[index].fullDetails() << std::endl;
+	}
+
+	std::cout << _contacts[index].fullDetails() << std::endl;
+	std::cin.ignore(256, '\n');
 }
 
 void PhoneBook::mainMenu()
 {
 	std::string input;
-	do
+	while (std::cin)
 	{
 		std::cout << "Enter an option: (ADD, SEARCH, EXIT)" << std::endl;
 		std::getline(std::cin, input);
 		if (input == "ADD")
-			this->newContact();
+			newContact();
 		else if (input == "SEARCH")
 			listContacts();
 		else if (input == "EXIT" || std::cin.eof())
@@ -67,5 +72,5 @@ void PhoneBook::mainMenu()
 		}
 		else
 			std::cout << "Invalid option." << std::endl;
-	} while (std::cin.good());
+	}
 }

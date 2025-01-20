@@ -1,5 +1,4 @@
 #pragma once
-
 #include <string>
 #include <iostream>
 
@@ -17,7 +16,7 @@ private:
 public:
 	Contact();
 	~Contact();
-	int init();
+	void init();
 	std::string shortDetails();
 	std::string fullDetails();
 };
