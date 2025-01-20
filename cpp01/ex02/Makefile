@@ -9,12 +9,13 @@ OUT_DIR = $(CURDIR)/bin
 
 DIRS = $(BUILD_DIR) $(OUT_DIR)
 
-NAME = $(OUT_DIR)/thisisbrain
+NAME = thisisbrain
+TARGET = $(OUT_DIR)/$(NAME)
 
 CXX = g++
 CXXFLAGS = -Wall -Wextra -g -MMD -std=c++98 
 
-all: $(NAME)
+all: $(TARGET)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp Makefile | $(DIRS)
 	$(CXX) $(CXXFLAGS) -o $@ -c $< 
@@ -22,8 +23,8 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp Makefile | $(DIRS)
 $(DIRS): 
 	mkdir -p $@
 
-$(NAME): $(OBJ_FILES)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ_FILES)
+$(TARGET): $(OBJ_FILES)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJ_FILES)
 
 clean reclean:
 	rm -rf $(BUILD_DIR)
