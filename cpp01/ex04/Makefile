@@ -1,4 +1,4 @@
-SOURCES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SOURCES = main.cpp
 SRC_FILES = $(addprefix $(SRC_DIR),$(SOURCES))
 OBJ_FILES = $(patsubst %.cpp,$(BUILD_DIR)/%.o,$(SOURCES))
 DEP_FILES = $(patsubst %.cpp,$(BUILD_DIR)/%.d,$(SOURCES))
@@ -9,7 +9,7 @@ OUT_DIR = $(CURDIR)/bin
 
 DIRS = $(BUILD_DIR) $(OUT_DIR)
 
-NAME = unnecessary_violence
+NAME = sed_is_for_losers
 TARGET = $(OUT_DIR)/$(NAME)
 
 CXX = g++
