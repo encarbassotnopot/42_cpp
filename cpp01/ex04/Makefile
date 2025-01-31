@@ -1,4 +1,4 @@
-SOURCES = main.cpp
+SOURCES = main.cpp Replace.cpp
 SRC_FILES = $(addprefix $(SRC_DIR),$(SOURCES))
 OBJ_FILES = $(patsubst %.cpp,$(BUILD_DIR)/%.o,$(SOURCES))
 DEP_FILES = $(patsubst %.cpp,$(BUILD_DIR)/%.d,$(SOURCES))

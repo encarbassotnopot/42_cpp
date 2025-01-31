@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:29:34 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2025/01/27 18:11:47 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2025/01/31 11:37:28 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int main(int argc, char **argv)
 		return 1;
 	}
 	Replace replace(argv[1]);
+	replace.do_replace(argv[2], argv[3]);
 }
