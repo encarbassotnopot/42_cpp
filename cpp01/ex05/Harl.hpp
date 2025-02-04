@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.hpp                                        :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ecoma-ba <ecoma-ba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ecoma-ba <ecoma-ba@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 18:09:20 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2025/01/31 11:35:03 by ecoma-ba         ###   ########.fr       */
+/*   Created: 2025/02/04 20:10:50 by ecoma-ba          #+#    #+#             */
+/*   Updated: 2025/02/04 20:36:29 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <string>
 #include <iostream>
-#include <fstream>
-
-class Replace
+class Harl
 {
 private:
-	std::string _og_filename;
-	std::string _new_filename;
+	void debug(void);
+	void info(void);
+	void warning(void);
+	void error(void);
 
 public:
-	Replace(std::string og_filename);
-	~Replace();
-	void do_replace(std::string og_text, std::string new_text);
+	Harl();
+	~Harl();
+	void complain(std::string level);
 };
+
+typedef void (Harl::*func)(void);

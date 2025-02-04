@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.cpp                                        :+:      :+:    :+:   */
+/*   Replacer.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ecoma-ba <ecoma-ba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ecoma-ba <ecoma-ba@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 18:09:05 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2025/01/31 13:54:06 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2025/02/04 20:05:13 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Replace.hpp"
+#include "Replacer.hpp"
 
-Replace::Replace(std::string og_filename) : _og_filename(og_filename), _new_filename(og_filename + ".replace") {}
+Replacer::Replacer(std::string og_filename) : _og_filename(og_filename), _new_filename(og_filename + ".replace") {}
 
-Replace::~Replace() {}
+Replacer::~Replacer() {}
 
 std::string my_replace(std::string line, std::string og_text, std::string new_text)
 {
@@ -24,7 +24,7 @@ std::string my_replace(std::string line, std::string og_text, std::string new_te
 	return line;
 }
 
-void Replace::do_replace(std::string og_text, std::string new_text)
+void Replacer::do_replace(std::string og_text, std::string new_text)
 {
 	std::fstream og_file(_og_filename.c_str(), std::ios::in);
 	if (!og_file.is_open())

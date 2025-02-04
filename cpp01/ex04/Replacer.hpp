@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Replacer.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoma-ba <ecoma-ba@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 17:29:34 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2025/02/04 20:09:34 by ecoma-ba         ###   ########.fr       */
+/*   Created: 2025/01/27 18:09:20 by ecoma-ba          #+#    #+#             */
+/*   Updated: 2025/02/04 20:04:32 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Replacer.hpp"
+#pragma once
+#include <string>
+#include <iostream>
+#include <fstream>
 
-int main(int argc, char **argv)
+class Replacer
 {
-	if (argc != 4)
-	{
-		std::cerr << "Error: Invalid number of arguments" << std::endl;
-		return 1;
-	}
-	Replacer replacer(argv[1]);
-	replacer.do_replace(argv[2], argv[3]);
-}
+private:
+	std::string _og_filename;
+	std::string _new_filename;
+
+public:
+	Replacer(std::string og_filename);
+	~Replacer();
+	void do_replace(std::string og_text, std::string new_text);
+};

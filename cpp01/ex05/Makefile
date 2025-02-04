@@ -1,4 +1,4 @@
-SOURCES = main.cpp Replacer.cpp
+SOURCES = main.cpp Harl.cpp
 SRC_FILES = $(addprefix $(SRC_DIR),$(SOURCES))
 OBJ_FILES = $(patsubst %.cpp,$(BUILD_DIR)/%.o,$(SOURCES))
 DEP_FILES = $(patsubst %.cpp,$(BUILD_DIR)/%.d,$(SOURCES))
@@ -9,7 +9,7 @@ OUT_DIR = $(CURDIR)/bin
 
 DIRS = $(BUILD_DIR) $(OUT_DIR)
 
-NAME = sed_is_for_losers
+NAME = harl
 TARGET = $(OUT_DIR)/$(NAME)
 
 CXX = g++
