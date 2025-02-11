@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:01:30 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2025/02/11 10:42:22 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2025/02/11 11:39:44 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 class ClapTrap
 {
+
+private:
+	ClapTrap();
+
 protected:
 	std::string _name;
 	unsigned int _hitPoints;

@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:01:30 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2025/02/11 11:29:24 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2025/02/11 11:39:12 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 
 class FragTrap : public ClapTrap
 {
+private:
+	FragTrap();
+
 public:
 	FragTrap(std::string name);
 	~FragTrap();
