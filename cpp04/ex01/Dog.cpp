@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ecoma-ba <ecoma-ba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ecoma-ba <ecoma-ba@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:34:20 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2025/02/12 15:52:51 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:28:30 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Dog::Dog() : Animal("Dog"), _brain(new Brain())
 Dog::~Dog()
 {
 	std::cout << "Dog destructor called" << std::endl;
+	delete _brain;
 }
 
 void Dog::makeSound() const

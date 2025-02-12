@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ecoma-ba <ecoma-ba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ecoma-ba <ecoma-ba@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:34:20 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2025/02/12 15:52:38 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:28:55 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Cat::Cat() : Animal("Cat"), _brain(new Brain())
 Cat::~Cat()
 {
 	std::cout << "Cat destructor called" << std::endl;
+	delete _brain;
 }
 
 void Cat::makeSound() const

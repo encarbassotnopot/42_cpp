@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ecoma-ba <ecoma-ba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ecoma-ba <ecoma-ba@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:38:07 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2025/02/12 15:30:01 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:27:55 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ int main()
 	std::cout << "Animal 1's sound ";
 	animals[1]->makeSound();
 	std::cout << std::endl;
-	std::cout << "Animal 1's third idea" << animals[1]->getBrain()->_ideas[3] << std::endl;
+	for (int i = 0; i < 4; i++)
+	{
+		delete animals[i];
+	}
 
 	return 0;
 }

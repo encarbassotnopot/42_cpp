@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ecoma-ba <ecoma-ba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ecoma-ba <ecoma-ba@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 13:33:38 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2025/02/12 15:27:43 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:25:53 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
+
 Brain::Brain()
 {
 	std::cout << "Brain constructor called" << std::endl;
 	for (int i = 0; i < 100; i++)
-		_ideas[i] = "idea #" + i;
+		_ideas[i] = "some idea";
 }
 
 Brain::Brain(Brain const &other)
