@@ -6,7 +6,7 @@
 /*   By: ecoma-ba <ecoma-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:26:53 by ecoma-ba          #+#    #+#             */
-/*   Updated: 2025/01/20 16:28:04 by ecoma-ba         ###   ########.fr       */
+/*   Updated: 2025/02/12 10:10:32 by ecoma-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void PhoneBook::listContacts()
 	{
 		std::cout << "Enter an index:" << std::endl;
 		std::cin >> index;
-		if (std::cin.fail() || index > _size)
+		if (std::cin.fail() || index >= _size)
 		{
 			if (std::cin.eof())
 				return;
