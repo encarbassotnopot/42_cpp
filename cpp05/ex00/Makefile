@@ -9,11 +9,11 @@ OUT_DIR = $(CURDIR)/bin
 
 DIRS = $(BUILD_DIR) $(OUT_DIR)
 
-NAME = animals
+NAME = bureaucrat
 TARGET = $(OUT_DIR)/$(NAME)
 
 CXX = g++
-CXXFLAGS = -Wall -Wextra -g -MMD -std=c++98 
+CXXFLAGS = -Wall -Wextra -g -MMD -std=c++98 -fsanitize=address
 
 all: $(TARGET)
 
