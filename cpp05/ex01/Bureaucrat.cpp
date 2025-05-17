@@ -50,6 +50,19 @@ void Bureaucrat::operator--(int)
 	_grade++;
 }
 
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << "Bureaucrat " << _name << " signed form " << form.getName() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << "Bureaucrat " << _name << " couldn't sign form " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
 const char *Bureaucrat::GradeTooHighException::what() const throw() { return "Grade too high!"; }
 const char *Bureaucrat::GradeTooLowException::what() const throw() { return "Grade too low!"; }
 

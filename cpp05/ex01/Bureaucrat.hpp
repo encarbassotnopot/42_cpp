@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
+#include "Form.hpp"
 
+class Form;
 class Bureaucrat
 {
 private:
@@ -22,6 +24,9 @@ public:
 	/** Operators **/
 	void operator++(int);
 	void operator--(int);
+
+	/** Functions **/
+	void signForm(Form &form);
 
 	/** Exceptions **/
 	class GradeTooHighException : public std::exception
