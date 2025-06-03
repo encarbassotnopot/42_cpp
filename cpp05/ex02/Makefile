@@ -1,4 +1,4 @@
-SOURCES = Bureaucrat.cpp main.cpp
+SOURCES = AForm.cpp Bureaucrat.cpp main.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 SRC_FILES = $(addprefix $(SRC_DIR),$(SOURCES))
 OBJ_FILES = $(patsubst %.cpp,$(BUILD_DIR)/%.o,$(SOURCES))
 DEP_FILES = $(patsubst %.cpp,$(BUILD_DIR)/%.d,$(SOURCES))
