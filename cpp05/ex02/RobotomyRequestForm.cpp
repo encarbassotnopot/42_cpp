@@ -23,6 +23,8 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
+	std::cout << executor.getName() << " is executing " << this->getName() << std::endl;
+
 	if (this->isSigned() == false)
 		throw AForm::NotSignedException();
 	else if (executor.getGrade() > this->getExecGrade())

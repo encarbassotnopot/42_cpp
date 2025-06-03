@@ -37,6 +37,8 @@ int AForm::getExecGrade() const { return _execGrade; }
 // Functions
 void AForm::beSigned(const Bureaucrat &bureaucrat)
 {
+	std::cout << bureaucrat.getName() << " is signing " << this->getName() << std::endl;
+
 	if (bureaucrat.getGrade() <= _signGrade)
 	{
 		_isSigned = true;
