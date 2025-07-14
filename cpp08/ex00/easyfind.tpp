@@ -1,6 +1,6 @@
 #include "easyfind.hpp"
 
-template <class T>
+template <typename T>
 void easyfind(T &container, int el)
 {
 	if (std::find(container.begin(), container.end(), el) != container.end())
