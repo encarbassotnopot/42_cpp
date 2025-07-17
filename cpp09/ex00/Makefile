@@ -13,7 +13,7 @@ NAME = btc
 TARGET = $(OUT_DIR)/$(NAME)
 
 CXX = g++
-CXXFLAGS = -Wall -Wextra -g -MMD -std=c++98 -pedantic -fsanitize=address -v
+CXXFLAGS = -Wall -Wextra -g -MMD -std=c++98 -pedantic -fsanitize=address
 
 all: $(TARGET)
 

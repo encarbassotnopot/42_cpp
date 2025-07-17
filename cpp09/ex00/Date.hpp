@@ -11,13 +11,13 @@ private:
 	int month;
 	int year;
 
-	Date();
-	Date &operator=(const Date &other);
-	Date(const Date &other);
+	Date(int day, int month, int year);
 
 public:
-	Date(int day, int month, int year);
+	Date();
 	Date(const std::string &textRep);
+	Date &operator=(const Date &other);
+	Date(const Date &other);
 	~Date();
 
 	bool operator<(const Date &other) const;
@@ -26,5 +26,9 @@ public:
 	bool operator<=(const Date &other) const;
 	bool operator>=(const Date &other) const;
 
-	const std::string &getDate() const;
+	int getYear() const;
+	int getMonth() const;
+	int getDay() const;
 };
+
+std::ostream &operator<<(std::ostream &s, const Date &d);
