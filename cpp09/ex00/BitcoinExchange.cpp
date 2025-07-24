@@ -39,7 +39,6 @@ BitcoinExchange::BitcoinExchange(const std::string &database)
 		{
 			std::cerr << "Error reading from Bitcoin Prices DB: " << e.what() << std::endl;
 		}
-		ifstream >> std::ws;
 	}
 }
 
@@ -57,6 +56,14 @@ BitcoinExchange::~BitcoinExchange() {}
 
 const std::map<Date, float> &BitcoinExchange::getDb() const { return dbMap; }
 
+float BitcoinExchange::getBtcValueAt(const Date &d)
+{
+	std::map<Date, float>::iterator low = this->dbMap.lower_bound(d);
+	if (low == this->dbMap.end())
+		throw std::out_of_range("Values for date not found in DB");
+	return low->second;
+}
+
 // TODO: fer maco això
 void BitcoinExchange::evaluateBtcValue(const std::string &database)
 {
@@ -73,6 +80,7 @@ void BitcoinExchange::evaluateBtcValue(const std::string &database)
 		{
 			std::string dateStr;
 			float val;
+			float valAtDate;
 
 			getline(ifstream, dateStr, '|');
 			Date date(dateStr);
@@ -85,16 +93,18 @@ void BitcoinExchange::evaluateBtcValue(const std::string &database)
 
 			if (ifstream.fail())
 			{
-				throw std::invalid_argument("Error parsing line");
 				ifstream.clear();
 				ifstream.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				throw std::invalid_argument("Error parsing line");
 			}
 
-			std::cout << date << "=" << val << std::endl;
+			valAtDate = getBtcValueAt(date);
+
+			std::cout << date << "=>" << val << " = " << val * valAtDate << std::endl;
 		}
 		catch (const std::exception &e)
 		{
-			std::cerr << "Error reading from values DB: " << e.what() << std::endl;
+			std::cerr << "Error reading from values input: " << e.what() << std::endl;
 		}
 		ifstream >> std::ws;
 	}

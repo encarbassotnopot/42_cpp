@@ -15,6 +15,7 @@ public:
 	~BitcoinExchange();
 
 	const std::map<Date, float> &getDb() const;
+	float getBtcValueAt(const Date &d);
 	void evaluateBtcValue(const std::string &database);
 };
 
